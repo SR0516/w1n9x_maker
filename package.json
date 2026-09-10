@@ -1,0 +1,13 @@
+{
+  "name": "win9x-ui-generator",
+  "main": "index.html",
+  "version": "0.10.0",
+  "description": "98.css based Win9x UI image generator",
+  "window": {
+    "title": "Win9x UI Generator",
+    "width": 1440,
+    "height": 960,
+    "min_width": 980,
+    "min_height": 700
+  }
+}

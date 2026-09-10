@@ -1,0 +1,163 @@
+:root {
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
+  color: #111;
+  background: #202020;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  padding: 18px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(255,255,255,.06), transparent 30%),
+    linear-gradient(135deg, #171717, #303030);
+}
+
+.app-shell {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 480px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.settings-window, .preview-panel { min-width: 0; }
+.settings-body {
+  padding: 10px;
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+}
+
+fieldset { margin: 0 0 10px; }
+fieldset:last-of-type { margin-bottom: 12px; }
+.subheading { margin: 10px 0 4px; font-weight: bold; }
+
+.field-row, .field-row-stacked { margin: 6px 0; }
+.field-row { gap: 6px; align-items: center; }
+.field-row > label:first-of-type { min-width: 96px; }
+.field-row input[type="number"],
+.field-row input[type="text"],
+.field-row select { min-width: 0; flex: 1; }
+.field-row input[type="color"] { width: 52px; height: 24px; padding: 1px; }
+.field-row-stacked input[type="text"],
+.field-row-stacked textarea { width: 100%; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.three-col input { min-width: 0; }
+
+.three-line-table { margin: 6px 0 10px; }
+.control-line {
+  display: grid;
+  grid-template-columns: 1fr 52px 66px;
+  gap: 6px;
+  align-items: center;
+  min-height: 23px;
+}
+.control-line strong { font-weight: normal; }
+.control-line input { justify-self: center; }
+.control-head { font-size: 11px; color: #555; }
+
+.button-config {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px;
+  gap: 6px;
+  align-items: center;
+  margin: 6px 0;
+}
+.button-config input[type="text"] { min-width: 0; }
+.button-config-options { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.button-config-options label { margin-right: 3px; }
+
+.actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.hint { margin: 7px 0 0; font-size: 12px; line-height: 1.35; }
+.status { min-height: 16px; }
+
+.preview-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 8px;
+  color: #fff;
+}
+#sizeLabel { font-size: 12px; opacity: .8; }
+
+.stage {
+  min-height: calc(100vh - 82px);
+  max-height: calc(100vh - 82px);
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  background:
+    linear-gradient(45deg, #303030 25%, #292929 25%, #292929 50%, #303030 50%, #303030 75%, #292929 75%);
+  background-size: 24px 24px;
+}
+
+#capture { display: inline-block; flex: 0 0 auto; }
+#target { width: 760px; margin: 0; }
+#windowBody.fixed-height { min-height: var(--body-min-height); }
+.demo-text { margin: 0 0 12px; white-space: pre-wrap; }
+.content-img { display: block; max-width: 100%; height: auto; object-fit: contain; margin: 8px 0 12px; }
+
+.progress-section { margin: 12px 0; }
+.progress-label-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.progress-label-row label { display: block; }
+#progressPreview { width: 440px; }
+.progress-indicator.disabled-look { opacity: .55; filter: grayscale(1); }
+
+.checkbox-section, .radio-section { margin: 12px 0; }
+.radio-section { display: grid; grid-template-columns: auto 1fr; gap: 5px 6px; align-items: center; }
+.input-section { display: flex; align-items: center; gap: 8px; margin: 12px 0; }
+.input-section > label { flex: 0 0 auto; }
+#previewInput { min-width: 0; flex: 1; }
+.button-section { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.status-section { margin-top: 12px; }
+.hidden { display: none !important; }
+
+footer { grid-column: 1 / -1; color: #aaa; font-size: 12px; text-align: center; }
+
+@media (max-width: 1120px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .settings-body { max-height: none; }
+  .stage { min-height: 560px; max-height: none; }
+}
+
+/* Native export mode: hide editor chrome and let the real Chromium renderer
+   paint only the Win9x window. No DOM-to-canvas reimplementation is used. */
+body.export-mode {
+  overflow: hidden !important;
+}
+body.export-mode > header,
+body.export-mode main > header,
+body.export-mode main > footer,
+body.export-mode .settings-panel,
+body.export-mode .settings-window,
+body.export-mode .preview-toolbar {
+  display: none !important;
+}
+body.export-mode main {
+  display: block !important;
+  width: max-content !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.export-mode .preview-panel,
+body.export-mode .stage {
+  display: block !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+}
+body.export-mode #capture {
+  width: max-content !important;
+  margin: 0 !important;
+}
+body.export-mode #target.export-target {
+  margin: 0 !important;
+}

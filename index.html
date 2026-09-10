@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Win9x UI Generator</title>
+  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.21/dist/98.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="window settings-window" aria-label="Settings">
+      <div class="title-bar">
+        <div class="title-bar-text">Win9x UI Generator — Settings</div>
+        <div class="title-bar-controls">
+          <button type="button" aria-label="Minimize" disabled></button>
+          <button type="button" aria-label="Maximize" disabled></button>
+          <button type="button" aria-label="Close" disabled></button>
+        </div>
+      </div>
+      <div class="window-body settings-body">
+        <fieldset>
+          <legend>Window</legend>
+          <div class="field-row-stacked">
+            <label for="windowTitle">Title</label>
+            <input id="windowTitle" type="text" value="My Program">
+          </div>
+          <div class="two-col">
+            <div class="field-row"><label for="windowWidth">Width</label><input id="windowWidth" type="number" min="160" max="2000" value="760"><span>px</span></div>
+            <div class="field-row"><label for="windowHeight">Body height</label><input id="windowHeight" type="number" min="0" max="2000" value="0"><span>px</span></div>
+          </div>
+          <div class="two-col">
+            <div class="field-row"><label for="bodyPadding">Body padding</label><input id="bodyPadding" type="number" min="0" max="64" value="8"><span>px</span></div>
+            <div class="field-row"><label for="windowMargin">Outer margin</label><input id="windowMargin" type="number" min="0" max="64" value="0"><span>px</span></div>
+          </div>
+          <div class="two-col">
+            <div class="field-row"><label for="bodyColor">Body color</label><input id="bodyColor" type="color" value="#c0c0c0"></div>
+            <div class="field-row"><label for="frameColor">Frame color</label><input id="frameColor" type="color" value="#c0c0c0"></div>
+          </div>
+          <div class="subheading">Title bar</div>
+          <div class="two-col">
+            <div class="field-row"><label for="activeStart">Active start</label><input id="activeStart" type="color" value="#000080"></div>
+            <div class="field-row"><label for="activeEnd">Active end</label><input id="activeEnd" type="color" value="#1084d0"></div>
+          </div>
+          <div class="two-col">
+            <div class="field-row"><label for="inactiveStart">Inactive start</label><input id="inactiveStart" type="color" value="#808080"></div>
+            <div class="field-row"><label for="inactiveEnd">Inactive end</label><input id="inactiveEnd" type="color" value="#b5b5b5"></div>
+          </div>
+          <div class="two-col">
+            <div class="field-row"><label for="activeText">Active text</label><input id="activeText" type="color" value="#ffffff"></div>
+            <div class="field-row"><label for="inactiveText">Inactive text</label><input id="inactiveText" type="color" value="#c0c0c0"></div>
+          </div>
+          <div class="field-row"><label for="windowState">State</label><select id="windowState"><option value="active">Active</option><option value="inactive">Inactive</option></select></div>
+
+          <div class="subheading">Title bar buttons</div>
+          <div class="three-line-table">
+            <div class="control-line control-head"><span></span><span>Show</span><span>Disabled</span></div>
+            <div class="control-line"><strong>Minimize</strong><input id="showMin" type="checkbox" checked><input id="disableMin" type="checkbox"></div>
+            <div class="control-line"><strong>Maximize</strong><input id="showMax" type="checkbox" checked><input id="disableMax" type="checkbox"></div>
+            <div class="control-line"><strong>Close</strong><input id="showClose" type="checkbox" checked><input id="disableClose" type="checkbox"></div>
+          </div>
+          <div class="field-row-stacked">
+            <label for="windowText">Text</label>
+            <textarea id="windowText" rows="4">Welcome to my totally normal Windows 98 program.</textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Progress Indicator</legend>
+          <div class="field-row"><input id="showProgress" type="checkbox" checked><label for="showProgress">Show</label><input id="disableProgress" type="checkbox"><label for="disableProgress">Disabled appearance</label></div>
+          <div class="two-col">
+            <div class="field-row"><label for="progressStyle">Style</label><select id="progressStyle"><option value="solid">Solid</option><option value="segmented">Segmented</option></select></div>
+            <div class="field-row"><label for="progressWidth">Width</label><input id="progressWidth" type="number" min="80" max="2000" value="440"><span>px</span></div>
+          </div>
+          <div class="two-col">
+            <div class="field-row"><label for="progressValue">Value</label><input id="progressValue" type="number" min="0" max="100" value="60"><span>%</span></div>
+            <div class="field-row"><input id="showProgressValue" type="checkbox" checked><label for="showProgressValue">Show %</label></div>
+          </div>
+          <div class="field-row-stacked"><label for="progressLabel">Label</label><input id="progressLabel" type="text" value="Downloading…"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Checkbox</legend>
+          <div class="field-row"><input id="showCheckbox" type="checkbox" checked><label for="showCheckbox">Show</label><input id="checkboxDisabled" type="checkbox"><label for="checkboxDisabled">Disabled</label><input id="checkboxChecked" type="checkbox" checked><label for="checkboxChecked">Checked</label></div>
+          <div class="field-row-stacked"><label for="checkboxText">Label</label><input id="checkboxText" type="text" value="Enable weird mode"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Radio Buttons</legend>
+          <div class="field-row"><input id="showRadio" type="checkbox"><label for="showRadio">Show</label></div>
+          <div class="field-row"><input id="radioOneChecked" type="checkbox" checked><label for="radioOneChecked">First checked</label><input id="radioOneDisabled" type="checkbox"><label for="radioOneDisabled">First disabled</label></div>
+          <div class="field-row"><input id="radioTwoDisabled" type="checkbox"><label for="radioTwoDisabled">Second disabled</label></div>
+          <div class="two-col">
+            <div class="field-row-stacked"><label for="radioOneText">First label</label><input id="radioOneText" type="text" value="Normal mode"></div>
+            <div class="field-row-stacked"><label for="radioTwoText">Second label</label><input id="radioTwoText" type="text" value="Experimental mode"></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Text Box</legend>
+          <div class="field-row"><input id="showInput" type="checkbox"><label for="showInput">Show</label><input id="inputDisabled" type="checkbox"><label for="inputDisabled">Disabled</label></div>
+          <div class="two-col">
+            <div class="field-row-stacked"><label for="inputLabel">Label</label><input id="inputLabel" type="text" value="Path"></div>
+            <div class="field-row-stacked"><label for="inputText">Value</label><input id="inputText" type="text" value="C:\\WINDOWS\\SYSTEM32"></div>
+          </div>
+          <div class="field-row"><label for="inputWidth">Width</label><input id="inputWidth" type="number" min="100" max="2000" value="440"><span>px</span></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Buttons</legend>
+          <div class="field-row"><input id="showButtons" type="checkbox" checked><label for="showButtons">Show button row</label></div>
+          <div class="button-config">
+            <div class="button-config-options"><input id="showOk" type="checkbox" checked><label for="showOk">OK</label><input id="disableOk" type="checkbox"><label for="disableOk">Disabled</label><input id="okDefault" type="checkbox" checked><label for="okDefault">Default</label></div>
+            <input id="okText" type="text" value="OK" aria-label="OK text">
+          </div>
+          <div class="button-config">
+            <div class="button-config-options"><input id="showCancel" type="checkbox" checked><label for="showCancel">Cancel</label><input id="disableCancel" type="checkbox"><label for="disableCancel">Disabled</label></div>
+            <input id="cancelText" type="text" value="Cancel" aria-label="Cancel text">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Status Bar</legend>
+          <div class="field-row"><input id="showStatus" type="checkbox"><label for="showStatus">Show</label></div>
+          <div class="three-col"><input id="statusOne" type="text" value="Ready"><input id="statusTwo" type="text" value="Slide 1"><input id="statusThree" type="text" value="CPU: 14%"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Image</legend>
+          <div class="field-row"><input id="showImage" type="checkbox"><label for="showImage">Show</label></div>
+          <input id="imageFile" type="file" accept="image/*">
+          <div class="field-row"><label for="imageWidth">Width</label><input id="imageWidth" type="number" min="80" max="2000" value="640"><span>px</span></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Export</legend>
+          <div class="two-col">
+            <div class="field-row"><label for="exportScale">Scale</label><select id="exportScale"><option value="1">1×</option><option value="2" selected>2×</option><option value="3">3×</option><option value="4">4×</option></select></div>
+            <div class="field-row"><label for="exportBackground">Background</label><select id="exportBackground"><option value="transparent">Transparent</option><option value="#c0c0c0">Window gray</option><option value="#ffffff">White</option><option value="#000000">Black</option></select></div>
+          </div>
+          <div class="field-row"><input id="includeMargin" type="checkbox"><label for="includeMargin">Include outer margin</label></div>
+          <p class="hint">NW.js mode uses Chromium's native Chromium page capture API, so the PNG is captured from the actual rendered DOM. Export goes directly to Downloads; Save As… uses a native Windows dialog. This avoids html2canvas / foreignObject font and pseudo-element problems.</p>
+        </fieldset>
+
+        <div class="actions">
+          <button id="exportPng" type="button" class="default">Export PNG</button>
+          <button id="saveAs" type="button">Save As…</button>
+          <button id="reset" type="button">Reset</button>
+        </div>
+        <p id="exportStatus" class="hint status" role="status"></p>
+      </div>
+    </section>
+
+    <section class="preview-panel">
+      <div class="preview-toolbar"><strong>Live Preview</strong><span id="sizeLabel">760 × auto</span></div>
+      <div class="stage">
+        <div id="capture">
+          <div id="target" class="window">
+            <div id="previewTitleBar" class="title-bar">
+              <div id="previewTitle" class="title-bar-text">My Program</div>
+              <div class="title-bar-controls">
+                <button id="previewMin" type="button" aria-label="Minimize"></button>
+                <button id="previewMax" type="button" aria-label="Maximize"></button>
+                <button id="previewClose" type="button" aria-label="Close"></button>
+              </div>
+            </div>
+            <div id="windowBody" class="window-body">
+              <p id="previewText" class="demo-text">Welcome to my totally normal Windows 98 program.</p>
+              <img id="previewImage" class="content-img" alt="Embedded image">
+
+              <div id="progressSection" class="progress-section">
+                <div class="progress-label-row">
+                  <label id="progressTextPreview">Downloading…</label>
+                  <span id="progressValueTextPreview">60%</span>
+                </div>
+                <div id="progressPreview" class="progress-indicator">
+                  <span id="progressBar" class="progress-indicator-bar"></span>
+                </div>
+              </div>
+
+              <div id="checkboxSection" class="checkbox-section">
+                <input id="previewCheckbox" type="checkbox" checked>
+                <label for="previewCheckbox" id="previewCheckboxLabel">Enable weird mode</label>
+              </div>
+
+              <div id="radioSection" class="radio-section">
+                <input id="previewRadioOne" name="previewRadio" type="radio" checked>
+                <label for="previewRadioOne" id="previewRadioOneLabel">Normal mode</label>
+                <input id="previewRadioTwo" name="previewRadio" type="radio">
+                <label for="previewRadioTwo" id="previewRadioTwoLabel">Experimental mode</label>
+              </div>
+
+              <div id="inputSection" class="input-section">
+                <label id="previewInputLabel" for="previewInput">Path</label>
+                <input id="previewInput" type="text" value="C:\\WINDOWS\\SYSTEM32">
+              </div>
+
+              <div id="buttonSection" class="button-section">
+                <button id="previewOk" type="button" class="default">OK</button>
+                <button id="previewCancel" type="button">Cancel</button>
+              </div>
+
+              <div id="statusSection" class="status-section">
+                <div class="status-bar">
+                  <p id="statusOnePreview" class="status-bar-field">Ready</p>
+                  <p id="statusTwoPreview" class="status-bar-field">Slide 1</p>
+                  <p id="statusThreePreview" class="status-bar-field">CPU: 14%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>98.css 0.1.21 • native NW.js export when available</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
